@@ -1,2 +1,2 @@
 # Mobile Application - Recipe Manager
-> Developed using ionic-angular framework
+> Developed using ionic-angular framework & demonstrating basic CRUD operations
