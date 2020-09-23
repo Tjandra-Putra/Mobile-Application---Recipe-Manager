@@ -1,1 +1,2 @@
-# Mobile-Application---Recipe-Manager
+# Mobile Application - Recipe Manager
+> Developed using ionic-angular framework
