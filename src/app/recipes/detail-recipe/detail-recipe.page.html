@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons>
+      <ion-back-button defaultHref="/recipes" slot="start" color="medium"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button fill="solid" (click)="onBookMark()">
+        <ion-icon [name]="isBookMark" slot="icon-only" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div *ngIf="!recipes.id" class="mx-3">
+    <img
+      src="../../../assets/img/undraw_the_search_s0xf.png"
+      alt="img"
+      class="img-fluid"
+    />
+    <ion-text class="ion-text-center">
+      <h3>Page not found</h3>
+      <p class="text-muted mx-5">
+        We can't seem to find the page you're looking for.
+      </p>
+      <button
+        class="btn btn-block mt-4 btn-warning round"
+        routerLink="/recipes"
+      >
+        Okay
+      </button>
+    </ion-text>
+  </div> -->
+
+  <div class="bg-white" *ngIf="recipes.id">
+    <ion-img [src]="recipes.imageUrl"></ion-img>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        <h1>{{recipes.title}}</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>{{ recipes.description }}</ion-text>
+    </ion-card-content>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="recipes.id">
+    <ion-fab-button color="warning">
+      <ion-icon name="trash-outline" (click)="onDeleteRecipe()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

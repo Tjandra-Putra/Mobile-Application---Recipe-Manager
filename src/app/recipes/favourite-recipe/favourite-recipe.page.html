@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1" color="dark">
+        <ion-icon name="options-outline" style="font-size: 20px"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Favourite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="filteredRecipes.length === 0" class="mx-3">
+    <img
+      src="../../../assets/img/undraw_page_notfound.png"
+      alt="img"
+      class="img-fluid"
+    />
+    <ion-text class="ion-text-center">
+      <h3>No Favourites Right Now!</h3>
+      <p class="text-muted">
+        You can simply click the bookmark icon to add to favourite.
+      </p>
+      <button
+        class="btn btn-block mt-4 btn-warning round"
+        routerLink="/recipes"
+      >
+        View My Recipe
+      </button>
+    </ion-text>
+  </div>
+
+  <ion-list *ngFor="let item of filteredRecipes">
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        detail
+        [routerLink]="['/','recipes',item.id]"
+        class="box"
+      >
+        <ion-thumbnail slot="start">
+          <img [src]="item.imageUrl" style="border-radius: 10px" />
+        </ion-thumbnail>
+        <ion-label style="color: #586069 !important"
+          >{{ item.title }}</ion-label
+        >
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option
+          class="box"
+          color="warning"
+          (click)="onRemoveFavourite(item.id)"
+          >Remove
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

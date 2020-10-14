@@ -1,0 +1,23 @@
+.btn-custom {
+    border-color: rgba(16, 116, 231, .5) !important;
+    color: #1074e7 !important;
+    font-weight: 500;
+    border-radius: 6px !important;
+}
+
+.round {
+    border-radius: 8px;
+}
+
+.box {
+
+    border-radius: 10px;
+}
+
+ion-content {
+    --ion-background-color: rgb(245, 245, 245);
+}
+
+ion-item {
+    --ion-background-color: #fff;
+}

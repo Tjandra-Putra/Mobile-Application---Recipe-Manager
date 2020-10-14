@@ -1,0 +1,20 @@
+.box {
+    border-radius: 10px;
+}
+
+ion-content {
+    --ion-background-color: rgb(245, 245, 245);
+    // --ion-background-color: #fafbfc;
+    // --ion-background-color: #f1f5f8;
+    // --ion-background-color: #E6E6FA;
+}
+
+ion-item {
+    --ion-background-color: #fff;
+}
+
+
+// Remove shadow from ion-header
+// ion-header::after {
+//     background-image: none;
+// }
