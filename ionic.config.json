@@ -1,8 +1,0 @@
-{
-  "name": "ionic-recipe",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
-  "type": "angular"
-}
